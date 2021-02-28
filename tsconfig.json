@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"jsx": "react",
+		"strict": true,
+		"outDir": "dist",
+		"target": "ESNEXT",
+		"declaration": true,
+		"module": "CommonJS",
+		"noImplicitAny": true,
+		"removeComments": true,
+		"esModuleInterop": true,
+		"strictNullChecks": true,
+		"noImplicitReturns": true,
+		"moduleResolution": "Node",
+		"strictFunctionTypes": true,
+		"jsxFactory": "createElement",
+		"noFallthroughCasesInSwitch": true,
+		"strictPropertyInitialization": true,
+		"forceConsistentCasingInFileNames": true
+	}
+}

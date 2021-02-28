@@ -1,0 +1,32 @@
+.Button {
+	border: 0;
+	height: 35rem;
+	outline: none;
+	display: flex;
+	cursor: pointer;
+	border-radius: 5rem;
+	padding-left: 10rem;
+	padding-right: 10rem;
+	align-items: center;
+	background-color: #fff;
+	justify-content: center;
+	transition-duration: .2s;
+	transition-property: background-color;
+	&:hover {
+		background-color: #e0e0e0; }
+	&:active {
+		background-color: #bdbdbd; }
+	&__icon,
+	&__text {
+		color: #757575;
+		user-select: none; }
+	&__icon {
+		font-size: 20rem; }
+	&__spacer {
+		width: 4rem;
+		height: 100%; }
+	&__text {
+		margin-top: 1px;
+		font-size: 17rem;
+		font-weight: 700;
+		text-transform: uppercase; } }
