@@ -1,21 +1,22 @@
 {
-	"compilerOptions": {
+  "compilerOptions": {
 		"jsx": "react",
-		"strict": true,
-		"outDir": "dist",
-		"target": "ESNext",
-		"module": "ESNext",
-		"declaration": true,
+    "sourceMap": true,
+    "module": "esnext",
+		"alwaysStrict": true,
 		"noImplicitAny": true,
+		"noImplicitThis": true,
 		"removeComments": true,
 		"esModuleInterop": true,
 		"strictNullChecks": true,
 		"noImplicitReturns": true,
 		"moduleResolution": "Node",
+		"noUnusedParameters": true,
+		"strictBindCallApply": true,
 		"strictFunctionTypes": true,
 		"jsxFactory": "createElement",
 		"noFallthroughCasesInSwitch": true,
 		"strictPropertyInitialization": true,
 		"forceConsistentCasingInFileNames": true
-	}
+  }
 }
