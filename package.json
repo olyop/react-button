@@ -1,8 +1,8 @@
 {
 	"types": "dist",
 	"license": "MIT",
-	"version": "2.0.2",
-	"main": "dist/index.js",
+	"version": "2.1.0",
+	"main": "src/index.tsx",
 	"description": "react-button",
 	"name": "@oly_op/react-button",
 	"bugs": "https://github.com/olyop/react-button/issues",
@@ -16,28 +16,26 @@
 		"url": "https://github.com/olyop/react-button.git"
 	},
 	"files": [
-		"dist"
+		"src"
 	],
 	"scripts": {
-		"build": "npx tsc",
 		"postpublish": "npm run push",
-		"delete-build": "rm -r -f dist",
-		"prepublishOnly": "npm run delete-build && npm run build",
 		"sync": "git checkout . && git remote update && git pull",
+		"build": "clear && npx cross-env TS_NODE_PROJECT=\"tsconfig.webpack.json\" npx webpack",
 		"push": "clear && git status && git add -A && git commit -m \"Update\" && git push -u origin master"
 	},
 	"devDependencies": {
-		"@oly_op/eslint-config-react": "^2.4.3",
+		"@oly_op/eslint-config-react": "^2.5.0",
 		"@types/react": "^17.0.2",
 		"@types/react-dom": "^17.0.1",
-		"@typescript-eslint/eslint-plugin": "^4.15.0",
+		"@typescript-eslint/eslint-plugin": "^4.16.1",
 		"eslint": "^7.20.0",
 		"eslint-plugin-import": "^2.22.0",
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^4.3.1",
 		"typescript": "^4.1.5"
 	},
-	"dependencies": {
+	"peerDependencies": {
 		"@oly_op/bem": "^2.12.0",
 		"react": "^17.0.1",
 		"react-dom": "^17.0.1"

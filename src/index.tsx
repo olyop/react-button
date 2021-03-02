@@ -21,32 +21,38 @@ const Button: FC<PropTypes> = ({
 		className={bem(className, "")}
 		children={(
 			<Fragment>
-				<i
-					children={icon}
-					className={bem(
-						iconClassName,
-						spanClassName,
-						"icon",
-						{ ignore: true, className: "material-icons" },
-					)}
-				/>
-				{icon && text && (
-					<div className={bem("spacer")}/>
+				{icon && (
+					<i
+						children={icon}
+						className={bem(
+							iconClassName,
+							spanClassName,
+							"icon",
+							{ ignore: true, className: "material-icons" },
+						)}
+					/>
 				)}
-				<span
-					children={text}
-					className={bem(
-						textClassName,
-						spanClassName,
-						"text",
-					)}
-				/>
+				{icon && text && (
+					<div
+						className={bem("spacer")}
+					/>
+				)}
+				{text && (
+					<span
+						children={text}
+						className={bem(
+							textClassName,
+							spanClassName,
+							"text",
+						)}
+					/>
+				)}
 			</Fragment>
 		)}
 	/>
 )
 
-interface PropTypes extends BemPropTypes {
+export interface PropTypes extends BemPropTypes {
 	icon?: string,
 	text?: string,
 	onClick?: () => void,
