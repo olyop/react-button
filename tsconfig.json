@@ -2,7 +2,7 @@
 	"extends": "@oly_op/tsconfig/tsconfig.json",
 	"compilerOptions": {
 		"jsx": "react",
-		"target": "ES5",
+		"target": "ESNext",
 		"declaration": true,
 		"jsxFactory": "createElement"
 	},
