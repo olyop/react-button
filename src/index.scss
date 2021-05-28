@@ -1,17 +1,17 @@
 .Button {
 	border: 0;
-	height: 35px;
 	outline: none;
 	display: flex;
-	padding: 0 10px;
 	cursor: pointer;
-	border-radius: 5px;
 	align-items: center;
-	background-color: #fff;
 	justify-content: center;
-	transition: 0.2s background-color;
+	height: var(--info-height);
+	padding: 0 var(--space-half);
+	border-radius: var(--border-radius);
+	background-color: var(--elevated-color);
+	transition: var(--transition-duration) background-color;
 	&:hover {
-		background-color: #e0e0e0; }
+		background-color: var(--button-hover-color); }
 	&:active {
 		background-color: #bdbdbd; }
 	&:disabled {
@@ -19,8 +19,8 @@
 		background-color: transparent; }
 	&__icon,
 	&__text {
-		color: #757575;
-		user-select: none; }
+		user-select: none;
+		color: var(--text-color-light); }
 	&__icon {
 		font-size: 20rem; }
 	&__spacer {
