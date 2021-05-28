@@ -1,8 +1,8 @@
 {
+	"types": "build",
 	"license": "MIT",
-	"version": "3.4.6",
+	"version": "3.4.7",
 	"main": "build/index.js",
-	"types": "build/index.d.ts",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
 	"bugs": "https://github.com/olyop/react-button/issues",
@@ -16,7 +16,7 @@
 		"url": "https://github.com/olyop/react-button.git"
 	},
 	"files": [
-		"dist"
+		"build"
 	],
 	"scripts": {
 		"build": "rollup -c",

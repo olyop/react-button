@@ -5,7 +5,7 @@ import "./index.scss"
 
 const bem = createBem("Button")
 
-const Button: FC<PropTypes> = ({
+const Button: FC<ButtonPropTypes> = ({
 	icon,
 	text,
 	onClick,
@@ -50,7 +50,7 @@ const Button: FC<PropTypes> = ({
 	/>
 )
 
-interface PropTypes extends BemPropTypes {
+export interface ButtonPropTypes extends BemPropTypes {
 	icon?: string,
 	text?: string,
 	tabIndex?: number,
