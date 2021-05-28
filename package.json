@@ -1,7 +1,7 @@
 {
 	"types": "dist",
 	"license": "MIT",
-	"version": "3.4.2",
+	"version": "3.4.3",
 	"main": "build/index.js",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
@@ -24,7 +24,7 @@
 		"delete-build": "rm -r -f dist",
 		"prepublishOnly": "npm run delete-build && npm run build",
 		"sync": "git checkout . && git remote update && git pull",
-		"push": "clear && git status && git add -A && git commit -m \"Update\" && git push -u origin master"
+		"push": "clear && git status && git add -A && git commit -m \"Update\" && git push -u origin main"
 	},
 	"devDependencies": {
 		"@oly_op/eslint-config-react": "2.5.9",
