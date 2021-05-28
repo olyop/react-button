@@ -1,0 +1,33 @@
+.Button {
+	border: 0;
+	height: 35px;
+	outline: none;
+	display: flex;
+	padding: 0 10px;
+	cursor: pointer;
+	border-radius: 5px;
+	align-items: center;
+	background-color: #fff;
+	justify-content: center;
+	transition: 0.2s background-color;
+	&:hover {
+		background-color: #e0e0e0; }
+	&:active {
+		background-color: #bdbdbd; }
+	&:disabled {
+		cursor: not-allowed;
+		background-color: transparent; }
+	&__icon,
+	&__text {
+		color: #757575;
+		user-select: none; }
+	&__icon {
+		font-size: 20rem; }
+	&__spacer {
+		width: 4rem;
+		height: 100%; }
+	&__text {
+		margin-top: 1px;
+		font-size: 17rem;
+		font-weight: 700;
+		text-transform: uppercase; } }

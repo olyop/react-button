@@ -1,0 +1,58 @@
+{
+	"types": "dist",
+	"license": "MIT",
+	"version": "3.4.2",
+	"main": "build/index.js",
+	"name": "@oly_op/react-button",
+	"description": "@oly_op/react-button",
+	"bugs": "https://github.com/olyop/react-button/issues",
+	"homepage": "https://github.com/olyop/react-button/blob/master/README.md",
+	"author": {
+		"name": "Oliver Plummer",
+		"email": "oliver.plummer@outlook.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/olyop/react-button.git"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rollup -c",
+		"postpublish": "npm run push",
+		"delete-build": "rm -r -f dist",
+		"prepublishOnly": "npm run delete-build && npm run build",
+		"sync": "git checkout . && git remote update && git pull",
+		"push": "clear && git status && git add -A && git commit -m \"Update\" && git push -u origin master"
+	},
+	"devDependencies": {
+		"@oly_op/eslint-config-react": "2.5.9",
+		"@oly_op/stylelint-config": "1.0.0",
+		"@oly_op/tsconfig": "1.0.1",
+		"@types/eslint": "7.2.12",
+		"@types/react": "17.0.8",
+		"@types/react-dom": "17.0.5",
+		"del-cli": "3.0.1",
+		"eslint": "7.27.0",
+		"eslint-plugin-import": "2.23.3",
+		"eslint-plugin-jsx-a11y": "6.4.1",
+		"eslint-plugin-node": "11.1.0",
+		"eslint-plugin-promise": "5.1.0",
+		"eslint-plugin-react": "7.23.2",
+		"eslint-plugin-react-hooks": "4.2.0",
+		"npm-run-all": "4.1.5",
+		"rollup": "2.50.2",
+		"rollup-plugin-sass": "1.2.2",
+		"rollup-plugin-typescript2": "0.30.0",
+		"sass": "1.34.0",
+		"stylelint": "13.13.1",
+		"tslib": "1.14.1",
+		"typescript": "4.3.2"
+	},
+	"dependencies": {
+		"@oly_op/bem": "2.12.0",
+		"react": "17.0.2",
+		"react-dom": "17.0.2"
+	}
+}
