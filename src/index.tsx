@@ -25,26 +25,28 @@ const Button: FC<ButtonPropTypes> = ({
 		className={bem(className, "", "flex-list-center rounded padding-half")}
 		children={(
 			<Fragment>
-				<i
-					children={icon}
-					className={bem(
-						iconClassName,
-						spanClassName,
-						"Icon",
-						{ ignore: true, className: "material-icons" },
-					)}
-				/>
-				{icon && text && (
-					<div className={bem("Spacer")}/>
+				{icon && (
+					<i
+						children={icon}
+						className={bem(
+							iconClassName,
+							spanClassName,
+							"Icon",
+							{ ignore: true, className: "material-icons" },
+						)}
+					/>
 				)}
-				<span
-					children={text}
-					className={bem(
-						textClassName,
-						spanClassName,
-						"body-one",
-					)}
-				/>
+				{text && (
+					<span
+						children={text}
+						className={bem(
+							textClassName,
+							spanClassName,
+							"Text",
+							"button",
+						)}
+					/>
+				)}
 			</Fragment>
 		)}
 	/>

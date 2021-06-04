@@ -1,25 +1,22 @@
 .Button {
+	gap: 8rem;
 	border: 0;
 	outline: none;
+	height: 36rem;
 	cursor: pointer;
-	padding: 0 var(--space-half);
-	background-color: var(--elevated-color);
+	background-color: var(--secondary-color);
 	transition: var(--transition-duration) background-color;
-	&:hover {
-		background-color: var(--hover-color); }
+	&:hover,
 	&:active {
-		background-color: var(--hover-color); }
+		background-color: var(--secondary-color-dark); }
 	&:disabled {
 		cursor: not-allowed;
 		background-color: transparent; }
 	&__Icon,
 	&__Text {
 		user-select: none;
-		color: var(--text-color-light); }
+		color: var(--secondary-color-text); }
 	&__Icon {
-		font-size: 20rem; }
-	&__Spacer {
-		width: 4rem;
-		height: 100%; }
+		font-size: 24rem; }
 	&__Text {
 		margin-top: 1px; } }
