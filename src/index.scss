@@ -2,8 +2,8 @@
 	gap: 8rem;
 	border: 0;
 	outline: none;
-	height: 36rem;
 	cursor: pointer;
+	height: var(--button-height);
 	background-color: var(--secondary-color);
 	transition: var(--transition-duration) background-color;
 	&:hover,
