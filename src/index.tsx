@@ -25,6 +25,7 @@ const Button: FC<ButtonPropTypes> = ({
 		tabIndex={tabIndex}
 		className={bem(
 			className,
+			icon && !text ? "square" : null,
 			transparent ? "transparent" : null,
 			"",
 			"FlexListCenter PaddingHalf Rounded",
