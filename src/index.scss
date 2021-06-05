@@ -12,11 +12,11 @@
 	&:disabled {
 		cursor: not-allowed;
 		background-color: transparent; }
-	&__Icon,
-	&__Text {
+	&__icon,
+	&__text {
 		user-select: none;
 		color: var(--secondary-color-text); }
-	&__Icon {
+	&__icon {
 		font-size: 24rem; }
-	&__Text {
+	&__text {
 		margin-top: 1px; } }
