@@ -25,7 +25,7 @@ const Button: FC<ButtonPropTypes> = ({
 		tabIndex={tabIndex}
 		className={bem(
 			className,
-			transparent && "transparent",
+			transparent ? "transparent" : null,
 			"",
 			"FlexListCenter Rounded",
 		)}
