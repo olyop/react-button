@@ -13,6 +13,7 @@
 		cursor: not-allowed;
 		background-color: transparent; }
 	&__square {
+		border-radius: 50%;
 		width: var(--button-height); }
 	&__transparent {
 		background-color: transparent;
