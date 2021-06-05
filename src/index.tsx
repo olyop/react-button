@@ -10,11 +10,12 @@ const Button: FC<ButtonPropTypes> = ({
 	text,
 	onClick,
 	tabIndex,
-	disabled,
 	className,
 	spanClassName,
 	iconClassName,
 	textClassName,
+	disabled = false,
+	transparent = false,
 }) => (
 	<button
 		title={text}
@@ -22,7 +23,12 @@ const Button: FC<ButtonPropTypes> = ({
 		onClick={onClick}
 		disabled={disabled}
 		tabIndex={tabIndex}
-		className={bem(className, "", "FlexListCenter Rounded")}
+		className={bem(
+			className,
+			transparent && "transparent",
+			"",
+			"FlexListCenter Rounded",
+		)}
 		children={(
 			<Fragment>
 				{icon && (
@@ -57,6 +63,7 @@ export interface ButtonPropTypes extends BemPropTypes {
 	text?: string,
 	tabIndex?: number,
 	disabled?: boolean,
+	transparent?: boolean,
 	spanClassName?: BemInput,
 	iconClassName?: BemInput,
 	textClassName?: BemInput,

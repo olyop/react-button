@@ -5,13 +5,14 @@
 	cursor: pointer;
 	height: var(--button-height);
 	min-width: var(--button-height);
-	background-color: var(--secondary-color);
 	transition: var(--transition-duration) background-color;
 	&:hover,
 	&:active {
 		background-color: var(--secondary-color-dark); }
 	&:disabled {
 		cursor: not-allowed;
+		background-color: transparent; }
+	&__transparent {
 		background-color: transparent; }
 	&__icon,
 	&__text {
