@@ -22,7 +22,7 @@ const Button: FC<ButtonPropTypes> = ({
 		onClick={onClick}
 		disabled={disabled}
 		tabIndex={tabIndex}
-		className={bem(className, "", "flex-list-center rounded")}
+		className={bem(className, "", "FlexListCenter Rounded")}
 		children={(
 			<Fragment>
 				{icon && (
@@ -31,7 +31,7 @@ const Button: FC<ButtonPropTypes> = ({
 						className={bem(
 							iconClassName,
 							spanClassName,
-							"Icon",
+							"icon",
 							{ ignore: true, className: "material-icons" },
 						)}
 					/>
@@ -42,8 +42,8 @@ const Button: FC<ButtonPropTypes> = ({
 						className={bem(
 							textClassName,
 							spanClassName,
-							"Text",
-							"button",
+							"text",
+							"Button",
 						)}
 					/>
 				)}
