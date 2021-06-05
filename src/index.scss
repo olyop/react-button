@@ -4,6 +4,7 @@
 	outline: none;
 	cursor: pointer;
 	height: var(--button-height);
+	min-width: var(--button-height);
 	background-color: var(--secondary-color);
 	transition: var(--transition-duration) background-color;
 	&:hover,
