@@ -50,7 +50,6 @@ const Button: FC<ButtonPropTypes> = ({
 							textClassName,
 							spanClassName,
 							"text",
-							"Button",
 						)}
 					/>
 				)}

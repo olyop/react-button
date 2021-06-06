@@ -1,4 +1,4 @@
-.ReactButton {
+.Button {
 	gap: 8rem;
 	border: 0;
 	outline: none;
@@ -16,6 +16,7 @@
 		border-radius: 50%;
 		width: var(--button-height); }
 	&__transparent {
+		color: var(--text-color);
 		background-color: transparent;
 		&:hover {
 			background-color: transparent; } }
@@ -28,4 +29,8 @@
 		height: 24rem;
 		font-size: 24rem; }
 	&__text {
-		margin-top: 1px; } }
+		margin-top: 1px;
+		font-size: 14rem;
+		font-weight: 500;
+		letter-spacing: 1.25rem;
+		text-transform: uppercase; } }
