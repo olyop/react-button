@@ -23,8 +23,9 @@
 	&__text {
 		user-select: none;
 		color: var(--secondary-color-text); }
-	&__transparent,
+	&__transparent
 	&__icon,
+	&__transparent,
 	&__text {
 		color: var(--text-color); }
 	&__icon {
