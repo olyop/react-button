@@ -3,7 +3,7 @@ import { createBem, BemInput, BemPropTypes } from "@oly_op/bem"
 
 import "./index.scss"
 
-const bem = createBem("ReactButton")
+const bem = createBem("Button")
 
 const Button: FC<ButtonPropTypes> = ({
 	icon,
