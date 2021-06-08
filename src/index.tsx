@@ -1,5 +1,5 @@
-import { createBem, BemInput, BemPropTypes } from "@oly_op/bem"
-import { createElement, CSSProperties, FC, Fragment } from "react"
+import { createBem, BemInput } from "@oly_op/bem"
+import { createElement, FC, Fragment, ButtonHTMLAttributes } from "react"
 
 import "./index.scss"
 
@@ -8,23 +8,18 @@ const bem = createBem("Button")
 const Button: FC<ButtonPropTypes> = ({
 	icon,
 	text,
-	style,
 	onClick,
-	tabIndex,
 	className,
 	spanClassName,
 	iconClassName,
 	textClassName,
-	disabled = false,
 	transparent = false,
+	...props
 }) => (
 	<button
 		title={text}
-		style={style}
 		type="button"
 		onClick={onClick}
-		disabled={disabled}
-		tabIndex={tabIndex}
 		className={bem(
 			className,
 			icon && !text ? "square" : null,
@@ -57,15 +52,13 @@ const Button: FC<ButtonPropTypes> = ({
 				)}
 			</Fragment>
 		)}
+		{...props}
 	/>
 )
 
-export interface ButtonPropTypes extends BemPropTypes {
+export interface ButtonPropTypes extends ButtonHTMLAttributes<HTMLButtonElement> {
 	icon?: string,
 	text?: string,
-	tabIndex?: number,
-	disabled?: boolean,
-	style?: CSSProperties,
 	transparent?: boolean,
 	spanClassName?: BemInput,
 	iconClassName?: BemInput,
