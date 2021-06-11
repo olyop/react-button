@@ -1,9 +1,9 @@
-import { createBem, BemInput } from "@oly_op/bem"
+import { createBEM, BEMInput, BEMPropTypes } from "@oly_op/bem"
 import { createElement, FC, Fragment, ButtonHTMLAttributes } from "react"
 
 import "./index.scss"
 
-const bem = createBem("Button")
+const bem = createBEM("Button")
 
 const Button: FC<ButtonPropTypes> = ({
 	icon,
@@ -56,13 +56,15 @@ const Button: FC<ButtonPropTypes> = ({
 	/>
 )
 
-export interface ButtonPropTypes extends ButtonHTMLAttributes<HTMLButtonElement> {
+type HTMLButtonPropTypes = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className">
+
+export interface ButtonPropTypes extends BEMPropTypes, HTMLButtonPropTypes {
 	icon?: string,
 	text?: string,
 	transparent?: boolean,
-	spanClassName?: BemInput,
-	iconClassName?: BemInput,
-	textClassName?: BemInput,
+	spanClassName?: BEMInput,
+	iconClassName?: BEMInput,
+	textClassName?: BEMInput,
 	onClick?: () => void | Promise<void>,
 }
 
