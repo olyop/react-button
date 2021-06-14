@@ -25,7 +25,7 @@ const Button: FC<ButtonPropTypes> = ({
 			icon && !text ? "square" : null,
 			transparent ? "transparent" : null,
 			"",
-			"FlexListCenter PaddingHalf Rounded",
+			"FlexListCenter PaddingLeftRightHalf Rounded",
 		)}
 		children={(
 			<Fragment>
