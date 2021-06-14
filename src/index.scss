@@ -3,7 +3,7 @@
 	border: 0;
 	outline: none;
 	cursor: pointer;
-	height: var(--button-height);
+	height: var(--button-dimension);
 	background-color: var(--secondary-color);
 	transition: var(--transition-duration) background-color;
 	&:hover,
@@ -14,7 +14,7 @@
 		background-color: transparent; }
 	&__square {
 		border-radius: 50%;
-		width: var(--button-height); }
+		width: var(--button-dimension); }
 	&__transparent {
 		background-color: transparent;
 		&:hover {
