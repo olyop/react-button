@@ -18,7 +18,7 @@
 	&__transparent {
 		background-color: transparent;
 		&:hover {
-			background-color: transparent; } }
+			background-color: var(--hover-color); } }
 	&__icon,
 	&__text {
 		user-select: none;
