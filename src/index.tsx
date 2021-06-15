@@ -23,6 +23,7 @@ const Button: FC<ButtonPropTypes> = ({
 		className={bem(
 			className,
 			icon && !text ? "square" : null,
+			icon && !text ? "PaddingLeftRightHalf" : null,
 			transparent ? "transparent" : null,
 			"",
 			"FlexListCenter Rounded",
