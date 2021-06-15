@@ -22,8 +22,7 @@ const Button: FC<ButtonPropTypes> = ({
 		onClick={onClick}
 		className={bem(
 			className,
-			icon && !text ? "square" : null,
-			icon && !text ? "PaddingLeftRightHalf" : null,
+			icon && !text ? "square" : "PaddingLeftRightHalf",
 			transparent ? "transparent" : null,
 			"",
 			"FlexListCenter Rounded",
