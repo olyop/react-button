@@ -47,6 +47,7 @@ const Button: FC<ButtonPropTypes> = ({
 							textClassName,
 							spanClassName,
 							"text",
+							"UpperCase",
 						)}
 					/>
 				)}
