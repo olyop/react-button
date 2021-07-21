@@ -12,7 +12,7 @@
 		background-color: transparent; }
 	&__square {
 		border-radius: 50%;
-		width: var(--button-dimension); }
+		min-width: var(--button-dimension); }
 	&__square &__icon {
 		margin-left: 0; }
 	&__transparent {
