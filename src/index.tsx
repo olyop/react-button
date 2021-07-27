@@ -53,6 +53,7 @@ const Button: FC<ButtonPropTypes> = ({
 						className={bem(
 							imageClassName,
 							spanClassName,
+							"image",
 							"icon",
 						)}
 					/>
