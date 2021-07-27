@@ -1,18 +1,25 @@
+import Image from "@oly_op/react-image"
 import { createBEM, BEMInput, BEMPropTypes } from "@oly_op/bem"
 import { createElement, FC, Fragment, ButtonHTMLAttributes } from "react"
 
 import "./index.scss"
+
+const isUndefined =
+	(value: unknown): value is undefined =>
+		value === undefined
 
 const bem = createBEM("Button")
 
 const Button: FC<ButtonPropTypes> = ({
 	icon,
 	text,
+	image,
 	onClick,
 	className,
 	spanClassName,
 	iconClassName,
 	textClassName,
+	imageClassName,
 	transparent = false,
 	...props
 }) => (
@@ -29,7 +36,7 @@ const Button: FC<ButtonPropTypes> = ({
 		)}
 		children={(
 			<Fragment>
-				{icon && (
+				{!isUndefined(icon) && (
 					<i
 						children={icon}
 						className={bem(
@@ -37,6 +44,16 @@ const Button: FC<ButtonPropTypes> = ({
 							spanClassName,
 							"icon",
 							{ ignore: true, className: "material-icons" },
+						)}
+					/>
+				)}
+				{!isUndefined(image) && (
+					<Image
+						url={image}
+						className={bem(
+							imageClassName,
+							spanClassName,
+							"icon",
 						)}
 					/>
 				)}
@@ -57,15 +74,18 @@ const Button: FC<ButtonPropTypes> = ({
 	/>
 )
 
-type HTMLButtonPropTypes = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className">
+type HTMLButtonPropTypes =
+	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className">
 
 export interface ButtonPropTypes extends BEMPropTypes, HTMLButtonPropTypes {
 	icon?: string,
 	text?: string,
+	image?: string,
 	transparent?: boolean,
 	spanClassName?: BEMInput,
 	iconClassName?: BEMInput,
 	textClassName?: BEMInput,
+	imageClassName?: BEMInput,
 	onClick?: () => void | Promise<void>,
 }
 
