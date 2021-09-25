@@ -36,7 +36,8 @@
 		&-left {
 			margin-left: var(--fix); }
 		&-right {
-			margin-right: var(--fix); } }
+			margin-right: var(--fix);
+			margin-left: calc(var(--fix) * 2); } }
 	&__image {
 		border-radius: 100%; }
 	&__text {
