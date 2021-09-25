@@ -29,14 +29,17 @@
 	&__text {
 		color: var(--text-color); }
 	&__icon {
+		--fix: -2rem;
 		width: 24rem;
 		height: 24rem;
 		font-size: 24rem;
-		margin-left: -2rem; }
+		&-left {
+			margin-left: var(--fix); }
+		&-right {
+			margin-right: var(--fix); } }
 	&__image {
 		border-radius: 100%; }
 	&__text {
 		margin-top: 1px;
-		font-size: 14rem;
 		font-weight: 500;
 		letter-spacing: 1.25rem; } }

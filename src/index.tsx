@@ -4,11 +4,8 @@ import { createElement, FC, Fragment, ButtonHTMLAttributes } from "react"
 
 import "./index.scss"
 
-const isUndefined =
-	(value: unknown): value is undefined =>
-		value === undefined
-
-const bem = createBEM("Button")
+const bem =
+	createBEM("Button")
 
 const Button: FC<ButtonPropTypes> = ({
 	icon,
@@ -16,10 +13,12 @@ const Button: FC<ButtonPropTypes> = ({
 	image,
 	onClick,
 	className,
+	rightIcon,
 	spanClassName,
 	iconClassName,
 	textClassName,
 	imageClassName,
+	rightIconClassName,
 	transparent = false,
 	...props
 }) => (
@@ -36,18 +35,19 @@ const Button: FC<ButtonPropTypes> = ({
 		)}
 		children={(
 			<Fragment>
-				{!isUndefined(icon) && (
+				{icon && (
 					<i
 						children={icon}
 						className={bem(
 							iconClassName,
 							spanClassName,
+							"icon-left",
 							"icon",
 							{ ignore: true, className: "material-icons" },
 						)}
 					/>
 				)}
-				{!isUndefined(image) && (
+				{image && (
 					<Image
 						url={image}
 						className={bem(
@@ -65,7 +65,19 @@ const Button: FC<ButtonPropTypes> = ({
 							textClassName,
 							spanClassName,
 							"text",
-							"UpperCase",
+							"BodyTwo UpperCase",
+						)}
+					/>
+				)}
+				{rightIcon && (
+					<i
+						children={rightIcon}
+						className={bem(
+							rightIconClassName,
+							spanClassName,
+							"icon-right",
+							"icon",
+							{ ignore: true, className: "material-icons" },
 						)}
 					/>
 				)}
@@ -82,11 +94,13 @@ export interface ButtonPropTypes extends BEMPropTypes, HTMLButtonPropTypes {
 	icon?: string,
 	text?: string,
 	image?: string,
+	rightIcon?: string,
 	transparent?: boolean,
 	spanClassName?: BEMInput,
 	iconClassName?: BEMInput,
 	textClassName?: BEMInput,
 	imageClassName?: BEMInput,
+	rightIconClassName?: BEMInput,
 	onClick?: () => void | Promise<void>,
 }
 
