@@ -2,11 +2,11 @@
 	gap: 8rem;
 	cursor: pointer;
 	height: var(--button-dimension);
-	background-color: var(--secondary-color);
+	background-color: var(--primary-color);
 	transition: var(--transition-duration) background-color;
 	&:hover,
 	&:active {
-		background-color: var(--secondary-color-dark); }
+		background-color: var(--primary-color-dark); }
 	&:disabled {
 		cursor: not-allowed;
 		background-color: transparent; }
@@ -22,7 +22,7 @@
 	&__icon,
 	&__text {
 		user-select: none;
-		color: var(--secondary-color-text); }
+		color: var(--primary-color-text); }
 	&__transparent
 	&__icon,
 	&__transparent
