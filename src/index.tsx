@@ -11,6 +11,7 @@ const Button: FC<ButtonPropTypes> = ({
 	icon,
 	text,
 	image,
+	title,
 	onClick,
 	className,
 	rightIcon,
@@ -88,11 +89,12 @@ const Button: FC<ButtonPropTypes> = ({
 )
 
 type HTMLButtonPropTypes =
-	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className">
+	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "title">
 
 export interface ButtonPropTypes extends BEMPropTypes, HTMLButtonPropTypes {
 	icon?: string,
 	text?: string,
+	title: string,
 	image?: string,
 	rightIcon?: string,
 	transparent?: boolean,
