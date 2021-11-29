@@ -24,9 +24,10 @@ const Button: FC<ButtonPropTypes> = ({
 	...props
 }) => (
 	<button
-		title={text}
 		type="button"
 		onClick={onClick}
+		title={title || text}
+		{...props}
 		className={bem(
 			className,
 			icon && !text ? "square" : "PaddingLeftRightHalf",
@@ -84,7 +85,6 @@ const Button: FC<ButtonPropTypes> = ({
 				)}
 			</Fragment>
 		)}
-		{...props}
 	/>
 )
 
@@ -94,8 +94,8 @@ type HTMLButtonPropTypes =
 export interface ButtonPropTypes extends BEMPropTypes, HTMLButtonPropTypes {
 	icon?: string,
 	text?: string,
-	title: string,
 	image?: string,
+	title?: string,
 	rightIcon?: string,
 	transparent?: boolean,
 	spanClassName?: BEMInput,

@@ -1,5 +1,8 @@
 {
-	"extends": "@oly_op/eslint-config-react",
+	"extends": [
+		"@oly_op/eslint-config-react",
+		"@oly_op"
+	],
 	"parserOptions": {
 		"project": "./tsconfig.eslint.json"
 	}
