@@ -1,5 +1,5 @@
 import Image from "@oly_op/react-image"
-import { createBEM, BEMInput, BEMPropTypes } from "@oly_op/bem"
+import { createBEM, BEMInput } from "@oly_op/bem"
 import { createElement, FC, Fragment, ButtonHTMLAttributes } from "react"
 
 import "./index.scss"
@@ -91,12 +91,13 @@ const Button: FC<ButtonPropTypes> = ({
 type HTMLButtonPropTypes =
 	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "title">
 
-export interface ButtonPropTypes extends BEMPropTypes, HTMLButtonPropTypes {
+export interface ButtonPropTypes extends HTMLButtonPropTypes {
 	icon?: string,
 	text?: string,
 	image?: string,
 	title?: string,
 	rightIcon?: string,
+	className?: BEMInput,
 	transparent?: boolean,
 	spanClassName?: BEMInput,
 	iconClassName?: BEMInput,
