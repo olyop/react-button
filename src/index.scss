@@ -19,7 +19,9 @@
 		margin-left: 0; }
 	&__transparent {
 		background-color: transparent;
-		&:hover {
+		&:hover,
+		&:focus,
+		&:active {
 			background-color: var(--hover-color); } }
 	&__icon,
 	&__text {
