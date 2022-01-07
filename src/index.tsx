@@ -2,8 +2,6 @@ import Image from "@oly_op/react-image"
 import { createBEM, BEMInput } from "@oly_op/bem"
 import { createElement, FC, Fragment, ButtonHTMLAttributes } from "react"
 
-import "./index.scss"
-
 const bem =
 	createBEM("Button")
 
