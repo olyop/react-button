@@ -19,7 +19,7 @@
 		"build"
 	],
 	"scripts": {
-		"build": "rollup  --config rollup.config.ts --configPlugin typescript",
+		"build": "rollup --config rollup.config.ts --configPlugin typescript",
 		"postpublish": "npm run push",
 		"delete-build": "rm -r -f dist",
 		"prepublishOnly": "npm run delete-build && npm run build",
