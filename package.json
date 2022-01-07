@@ -1,7 +1,7 @@
 {
 	"types": "build",
 	"license": "MIT",
-	"version": "4.5.7",
+	"version": "4.5.8",
 	"main": "build/index.js",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
@@ -19,7 +19,7 @@
 		"build"
 	],
 	"scripts": {
-		"build": "rollup -c",
+		"build": "rollup  --config rollup.config.ts --configPlugin typescript",
 		"postpublish": "npm run push",
 		"delete-build": "rm -r -f dist",
 		"prepublishOnly": "npm run delete-build && npm run build",
@@ -31,6 +31,7 @@
 		"@oly_op/eslint-config-react": "3.0.7",
 		"@oly_op/stylelint-config": "2.0.4",
 		"@oly_op/tsconfig": "1.0.7",
+		"@rollup/plugin-typescript": "8.3.0",
 		"@types/eslint": "8.2.2",
 		"@types/react": "17.0.38",
 		"@types/react-dom": "17.0.11",
