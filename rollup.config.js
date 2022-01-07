@@ -12,7 +12,7 @@ export default {
     exports: "named",
   }],
   plugins: [
-    sass(),
+    sass({ output: "index.css" }),
     typescript(),
   ],
   external: [
