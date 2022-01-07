@@ -1,7 +1,7 @@
 {
 	"types": "build",
 	"license": "MIT",
-	"version": "4.5.8",
+	"version": "4.5.9",
 	"main": "build/index.js",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
@@ -22,9 +22,8 @@
 		"build": "rollup --config rollup.config.ts --configPlugin typescript",
 		"postpublish": "npm run push",
 		"delete-build": "rm -r -f dist",
-		"prepublishOnly": "npm run delete-build && npm run build",
 		"sync": "git checkout . && git remote update && git pull",
-		"push": "clear && git status && git add -A && git commit -m \"Update\" && git push -u origin main"
+		"push": "git add -A && git commit -m \"Update\" && git push -u origin main"
 	},
 	"devDependencies": {
 		"@oly_op/eslint-config": "5.1.6",
@@ -59,7 +58,7 @@
 	},
 	"dependencies": {
 		"@oly_op/bem": "5.0.8",
-		"@oly_op/react-image": "1.0.1",
+		"@oly_op/react-image": "1.1.2",
 		"react": "17.0.2",
 		"react-dom": "17.0.2"
 	}
