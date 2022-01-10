@@ -34,7 +34,7 @@
 		color: var(--text-color); }
 	&__icon {
 		--fix: -2rem;
-		--dim: calc(var(--button-dimesnion) * 2 / 3);
+		--dim: calc(var(--button-dimension) * 2 / 3);
 		width: var(--dim);
 		height: var(--dim);
 		font-size: var(--dim);
