@@ -67,7 +67,7 @@ const Button: FC<ButtonPropTypes> = ({
 							textClassName,
 							spanClassName,
 							"text",
-							"BodyTwo UpperCase",
+							"UpperCase",
 						)}
 					/>
 				)}
