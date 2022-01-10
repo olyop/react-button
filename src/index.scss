@@ -15,7 +15,7 @@
 			background-color: var(--primary-color); } }
 	&__square {
 		border-radius: 50%;
-		min-width: var(--button-dimension); }
+		width: var(--button-dimension); }
 	&__square &__icon {
 		margin-left: 0; }
 	&__transparent {
