@@ -1,7 +1,7 @@
 {
 	"types": "build",
 	"license": "MIT",
-	"version": "4.5.12",
+	"version": "4.5.14",
 	"main": "build/index.js",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
@@ -20,8 +20,10 @@
 	],
 	"scripts": {
 		"build": "rollup --config rollup.config.ts --configPlugin typescript",
+		"prepublish": "npm run init && npm run build",
 		"postpublish": "npm run push",
-		"delete-build": "rm -r -f dist",
+		"delete-build": "rm -rf build",
+		"init": "clear && npm run delete-build",
 		"sync": "git checkout . && git remote update && git pull",
 		"push": "git add -A && git commit -m \"Update\" && git push -u origin main"
 	},
