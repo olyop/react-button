@@ -1,6 +1,6 @@
 import Image from "@oly_op/react-image"
 import { createBEM, BEMInput } from "@oly_op/bem"
-import { createElement, FC, Fragment, ButtonHTMLAttributes } from "react"
+import { createElement, FC, Fragment, ButtonHTMLAttributes, ReactNode } from "react"
 
 import "./index.scss"
 
@@ -26,7 +26,10 @@ const Button: FC<ButtonPropTypes> = ({
 	<button
 		type="button"
 		onClick={onClick}
-		title={title || text}
+		title={title || (
+			typeof text === "string" ?
+				text : undefined
+		)}
 		{...props}
 		className={bem(
 			className,
@@ -93,9 +96,9 @@ type HTMLButtonPropTypes =
 
 export interface ButtonPropTypes extends HTMLButtonPropTypes {
 	icon?: string,
-	text?: string,
 	image?: string,
 	title?: string,
+	text?: ReactNode,
 	rightIcon?: string,
 	className?: BEMInput,
 	transparent?: boolean,
