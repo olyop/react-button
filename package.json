@@ -1,7 +1,7 @@
 {
 	"types": "build",
 	"license": "MIT",
-	"version": "4.5.16",
+	"version": "4.5.18",
 	"main": "build/index.js",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
@@ -19,11 +19,12 @@
 		"build"
 	],
 	"scripts": {
-		"build": "rollup --config rollup.config.ts --configPlugin typescript",
+		"prebuild": "npm run delete-build",
+		"build": "rollup -c rollup.config.ts --configPlugin typescript",
 		"prepublishOnly": "npm run init && npm run build",
 		"postpublish": "npm run push",
 		"delete-build": "rm -rf build",
-		"init": "clear && npm run delete-build",
+		"init": "clear",
 		"sync": "git checkout . && git remote update && git pull",
 		"push": "git add -A && git commit -m \"Update\" && git push -u origin main"
 	},
@@ -34,10 +35,12 @@
 		"@oly_op/tsconfig": "1.0.7",
 		"@rollup/plugin-typescript": "8.3.0",
 		"@types/eslint": "8.2.2",
+		"@types/node": "17.0.8",
 		"@types/react": "17.0.38",
 		"@types/react-dom": "17.0.11",
 		"@typescript-eslint/eslint-plugin": "5.9.0",
 		"@typescript-eslint/parser": "5.9.0",
+		"acorn-jsx": "5.3.2",
 		"del-cli": "4.0.1",
 		"eslint": "8.6.0",
 		"eslint-config-airbnb": "19.0.4",

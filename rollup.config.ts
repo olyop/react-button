@@ -1,6 +1,7 @@
+import jsx from "acorn-jsx"
 import sass from "rollup-plugin-sass"
 import { RollupOptions } from "rollup"
-import typescript from "rollup-plugin-typescript2"
+import typescript from "@rollup/plugin-typescript"
 
 const options: RollupOptions = {
 	input: "src/index.tsx",
@@ -10,11 +11,16 @@ const options: RollupOptions = {
 		exports: "named",
 		file: "build/index.js",
 	}],
+	acornInjectPlugins: [
+		jsx(),
+	],
 	plugins: [
 		sass({
 			output: "build/index.css",
 		}),
-		typescript(),
+		typescript({
+			tsconfig: "./tsconfig.rollup.json",
+		}),
 	],
 	external: [
 		"react",
