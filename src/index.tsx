@@ -33,7 +33,7 @@ const Button: FC<ButtonPropTypes> = ({
 		{...props}
 		className={bem(
 			className,
-			icon && !text ? "square" : "PaddingLeftRightHalf",
+			icon && !text ? "square" : undefined,
 			transparent ? "transparent" : null,
 			"",
 			"FlexRowCenter Rounded",

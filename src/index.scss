@@ -3,6 +3,7 @@
 	cursor: pointer;
 	height: var(--button-dimension);
 	background-color: var(--primary-color);
+	padding: 0 calc(var(--button-dimension) * 5 / 18);
 	transition: var(--transition-duration) background-color;
 	&:hover,
 	&:focus,
