@@ -34,9 +34,10 @@
 		color: var(--text-color); }
 	&__icon {
 		--fix: -2rem;
-		width: var(--button-dimension-icon);
-		height: var(--button-dimension-icon);
-		font-size: var(--button-dimension-icon);
+		--dim: calc(var(--button-dimesnion) * 2 / 3);
+		width: var(--dim);
+		height: var(--dim);
+		font-size: var(--dim);
 		&-left {
 			margin-left: var(--fix); }
 		&-right {
@@ -48,4 +49,4 @@
 		margin-top: 1rem;
 		font-weight: 500;
 		letter-spacing: 1.25rem;
-		font-size: calc(var(--button-dimension) * 0.4); } }
+		font-size: calc(var(--button-dimension) * 2 / 5); } }
