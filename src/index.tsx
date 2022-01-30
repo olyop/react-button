@@ -73,7 +73,7 @@ const Button: FC<ButtonPropTypes> = ({
 			<img
 				src={image.src}
 				alt={image.alt}
-				crossOrigin={image.crossOrigin}
+				crossOrigin={image.crossOrigin || "anonymous"}
 				className={bem(
 					imageClassName,
 					spanClassName,
@@ -135,6 +135,12 @@ interface ButtonClassNamePropTypes {
 	textClassName?: BEMInput,
 	imageClassName?: BEMInput,
 	rightIconClassName?: BEMInput,
+}
+
+export interface ButtonImageOptions
+	extends Pick<ImgHTMLAttributes<HTMLButtonPropTypes>, "crossOrigin"> {
+	src: string,
+	description: string,
 }
 
 export interface ButtonPropTypes
