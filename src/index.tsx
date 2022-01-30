@@ -72,7 +72,7 @@ const Button: FC<ButtonPropTypes> = ({
 		{image && (
 			<img
 				src={image.src}
-				alt={image.alt}
+				alt={image.description}
 				crossOrigin={image.crossOrigin || "anonymous"}
 				className={bem(
 					imageClassName,
@@ -138,7 +138,7 @@ interface ButtonClassNamePropTypes {
 }
 
 export interface ButtonImageOptions
-	extends Pick<ImgHTMLAttributes<HTMLButtonPropTypes>, "crossOrigin"> {
+	extends Pick<ImgHTMLAttributes<HTMLImageElement>, "crossOrigin"> {
 	src: string,
 	description: string,
 }
@@ -153,8 +153,8 @@ export interface ButtonPropTypes
 	text?: ReactNode,
 	rightIcon?: string,
 	transparent?: boolean,
+	image?: ButtonImageOptions,
 	onClick?: () => void | Promise<void>,
-	image?: ImgHTMLAttributes<HTMLImageElement>,
 }
 
 export default Button
