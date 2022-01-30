@@ -12,6 +12,7 @@ const options: RollupOptions = {
 		file: "build/index.js",
 	}],
 	acornInjectPlugins: [
+		// @ts-ignore
 		jsx(),
 	],
 	plugins: [

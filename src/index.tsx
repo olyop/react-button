@@ -3,10 +3,10 @@ import {
 	ReactNode,
 	createElement,
 	CSSProperties,
+	ImgHTMLAttributes,
 	ButtonHTMLAttributes,
 } from "react"
 
-import Image from "@oly_op/react-image"
 import { createBEM, BEMInput } from "@oly_op/bem"
 
 import "./index.scss"
@@ -43,7 +43,6 @@ const Button: FC<ButtonPropTypes> = ({
 		type="button"
 		onClick={onClick}
 		title={title || (isString(text) ? text : undefined)}
-		{...props}
 		className={bem(
 			className,
 			icon && !text ? "square" : undefined,
@@ -51,6 +50,7 @@ const Button: FC<ButtonPropTypes> = ({
 			"",
 			"FlexRowCenter Rounded",
 		)}
+		{...props}
 	>
 		{icon && (
 			<i
@@ -70,12 +70,13 @@ const Button: FC<ButtonPropTypes> = ({
 			/>
 		)}
 		{image && (
-			<Image
-				url={image}
+			<img
+				src={image.src}
+				alt={image.alt}
+				crossOrigin={image.crossOrigin}
 				className={bem(
 					imageClassName,
 					spanClassName,
-					"image",
 					"icon",
 				)}
 			/>
@@ -142,12 +143,12 @@ export interface ButtonPropTypes
 	ButtonStylePropTypes,
 	ButtonClassNamePropTypes {
 	icon?: string,
-	image?: string,
 	title?: string,
 	text?: ReactNode,
 	rightIcon?: string,
 	transparent?: boolean,
 	onClick?: () => void | Promise<void>,
+	image?: ImgHTMLAttributes<HTMLImageElement>,
 }
 
 export default Button
