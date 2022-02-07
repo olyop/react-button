@@ -29,6 +29,7 @@ const Button: FC<ButtonPropTypes> = ({
 	spanStyle,
 	iconStyle,
 	textStyle,
+	imageStyle,
 	spanClassName,
 	iconClassName,
 	textClassName,
@@ -72,6 +73,7 @@ const Button: FC<ButtonPropTypes> = ({
 		{image && (
 			<img
 				src={image.src}
+				style={imageStyle}
 				alt={image.description}
 				crossOrigin={image.crossOrigin || "anonymous"}
 				className={bem(
@@ -124,6 +126,7 @@ interface ButtonStylePropTypes {
 	textStyle?: CSSProperties,
 	iconStyle?: CSSProperties,
 	spanStyle?: CSSProperties,
+	imageStyle?: CSSProperties,
 	leftIconStyle?: CSSProperties,
 	rightIconStyle?: CSSProperties,
 }
