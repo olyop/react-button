@@ -7,9 +7,12 @@ import {
 	ButtonHTMLAttributes,
 } from "react"
 
-import { createBEM, BEMInput } from "@oly_op/bem"
+import { createBEM, BEMInput, BEMClassType } from "@oly_op/bem"
 
 import "./index.scss"
+
+const materialIconClassName: BEMClassType =
+	{ ignore: true, className: "material-icons" }
 
 const isString =
 	(value: unknown): value is string =>
@@ -26,22 +29,24 @@ const Button: FC<ButtonPropTypes> = ({
 	onClick,
 	className,
 	rightIcon,
-	spanStyle,
 	iconStyle,
 	textStyle,
 	imageStyle,
-	spanClassName,
 	iconClassName,
 	textClassName,
 	leftIconStyle,
+	iconTextStyle,
 	imageClassName,
 	rightIconStyle,
+	type = "button",
+	iconTextClassName,
 	rightIconClassName,
 	transparent = false,
 	...props
 }) => (
 	<button
-		type="button"
+		// eslint-disable-next-line react/button-has-type
+		type={type}
 		onClick={onClick}
 		title={title || (isString(text) ? text : undefined)}
 		className={bem(
@@ -57,16 +62,16 @@ const Button: FC<ButtonPropTypes> = ({
 			<i
 				children={icon}
 				style={{
-					...spanStyle,
+					...iconTextStyle,
 					...iconStyle,
 					...leftIconStyle,
 				}}
 				className={bem(
 					iconClassName,
-					spanClassName,
+					iconTextClassName,
 					"icon-left",
 					"icon",
-					{ ignore: true, className: "material-icons" },
+					materialIconClassName,
 				)}
 			/>
 		)}
@@ -78,7 +83,7 @@ const Button: FC<ButtonPropTypes> = ({
 				crossOrigin={image.crossOrigin || "anonymous"}
 				className={bem(
 					imageClassName,
-					spanClassName,
+					iconTextClassName,
 					"icon",
 				)}
 			/>
@@ -87,14 +92,14 @@ const Button: FC<ButtonPropTypes> = ({
 			<span
 				children={text}
 				style={{
-					...spanStyle,
+					...iconTextStyle,
 					...textStyle,
 				}}
 				className={bem(
 					textClassName,
-					spanClassName,
-					"text",
+					iconTextClassName,
 					"UpperCase",
+					"text",
 				)}
 			/>
 		)}
@@ -102,16 +107,17 @@ const Button: FC<ButtonPropTypes> = ({
 			<i
 				children={rightIcon}
 				style={{
-					...spanStyle,
+					...iconTextStyle,
 					...iconStyle,
 					...rightIconStyle,
 				}}
 				className={bem(
 					rightIconClassName,
-					spanClassName,
+					iconClassName,
+					iconTextClassName,
 					"icon-right",
 					"icon",
-					{ ignore: true, className: "material-icons" },
+					materialIconClassName,
 				)}
 			/>
 		)}
@@ -119,24 +125,24 @@ const Button: FC<ButtonPropTypes> = ({
 )
 
 type HTMLButtonPropTypes =
-	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "style" | "className" | "title" | "onClick">
+	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "className" | "title" | "onClick">
 
 interface ButtonStylePropTypes {
-	style?: CSSProperties,
-	textStyle?: CSSProperties,
 	iconStyle?: CSSProperties,
-	spanStyle?: CSSProperties,
+	textStyle?: CSSProperties,
 	imageStyle?: CSSProperties,
+	iconTextStyle?: CSSProperties,
 	leftIconStyle?: CSSProperties,
 	rightIconStyle?: CSSProperties,
 }
 
 interface ButtonClassNamePropTypes {
 	className?: BEMInput,
-	spanClassName?: BEMInput,
 	iconClassName?: BEMInput,
 	textClassName?: BEMInput,
 	imageClassName?: BEMInput,
+	iconTextClassName?: BEMInput,
+	leftIconClassName?: BEMInput,
 	rightIconClassName?: BEMInput,
 }
 
@@ -158,6 +164,7 @@ export interface ButtonPropTypes
 	transparent?: boolean,
 	image?: ButtonImageOptions,
 	onClick?: () => void | Promise<void>,
+	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"],
 }
 
 export default Button
