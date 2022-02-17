@@ -39,6 +39,7 @@ const Button: FC<ButtonPropTypes> = ({
 	imageClassName,
 	rightIconStyle,
 	type = "button",
+	leftIconClassName,
 	iconTextClassName,
 	rightIconClassName,
 	transparent = false,
@@ -67,6 +68,7 @@ const Button: FC<ButtonPropTypes> = ({
 					...leftIconStyle,
 				}}
 				className={bem(
+					leftIconClassName,
 					iconClassName,
 					iconTextClassName,
 					"icon-left",
