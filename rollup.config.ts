@@ -27,7 +27,9 @@ const options: RollupOptions = {
 		sass({
 			output: "build/index.css",
 		}),
-		typescript(),
+		typescript({
+			tsconfig: "./tsconfig.rollup.json",
+		}),
 	],
 	external: [
 		"react",

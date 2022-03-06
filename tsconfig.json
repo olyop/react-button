@@ -2,16 +2,10 @@
 	"extends": "@oly_op/tsconfig/tsconfig.json",
 	"compilerOptions": {
 		"jsx": "react",
-		"outDir": "build",
-		"declaration": true,
-		"declarationDir": ".",
 		"jsxFactory": "createElement"
 	},
 	"include": [
 		"src",
 		"rollup.config.ts"
-	],
-	"exclude": [
-		"dist"
 	]
 }
