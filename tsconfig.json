@@ -9,8 +9,5 @@
 	"include": [
 		"src",
 		"rollup.config.ts"
-	],
-	"exclude": [
-		"build"
 	]
 }

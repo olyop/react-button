@@ -163,9 +163,9 @@ export interface ButtonPropTypes
 	title?: string,
 	text?: ReactNode,
 	rightIcon?: string,
+	onClick?: () => void,
 	transparent?: boolean,
 	image?: ButtonImageOptions,
-	onClick?: () => void | Promise<void>,
 	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"],
 }
 
