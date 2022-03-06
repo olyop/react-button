@@ -4,7 +4,6 @@
 		"jsx": "react",
 		"outDir": "build",
 		"declaration": true,
-		"declarationDir": ".",
 		"jsxFactory": "createElement"
 	},
 	"include": [

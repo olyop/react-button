@@ -3,6 +3,15 @@ import sass from "rollup-plugin-sass"
 import { RollupOptions } from "rollup"
 import typescript from "@rollup/plugin-typescript"
 
+type Parser =
+	Parameters<ReturnType<typeof jsx>>[0]
+
+declare module "rollup" {
+	interface RollupOptions {
+		acornInjectPlugins?: ((BaseParser: Parser) => Parser)[],
+	}
+}
+
 const options: RollupOptions = {
 	input: "src/index.tsx",
 	output: [{
@@ -12,7 +21,6 @@ const options: RollupOptions = {
 		file: "build/index.js",
 	}],
 	acornInjectPlugins: [
-		// @ts-ignore
 		jsx(),
 	],
 	plugins: [
