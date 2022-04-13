@@ -38,7 +38,6 @@ const Button: FC<ButtonPropTypes> = ({
 	iconTextStyle,
 	imageClassName,
 	rightIconStyle,
-	type = "button",
 	leftIconClassName,
 	iconTextClassName,
 	rightIconClassName,
@@ -46,8 +45,7 @@ const Button: FC<ButtonPropTypes> = ({
 	...props
 }) => (
 	<button
-		// eslint-disable-next-line react/button-has-type
-		type={type}
+		type="button"
 		onClick={onClick}
 		title={title || (isString(text) ? text : undefined)}
 		className={bem(
@@ -127,7 +125,7 @@ const Button: FC<ButtonPropTypes> = ({
 )
 
 type HTMLButtonPropTypes =
-	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type" | "className" | "title" | "onClick">
+	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "title" | "onClick">
 
 interface ButtonStylePropTypes {
 	iconStyle?: CSSProperties,
@@ -166,7 +164,6 @@ export interface ButtonPropTypes
 	onClick?: () => void,
 	transparent?: boolean,
 	image?: ButtonImageOptions,
-	type?: ButtonHTMLAttributes<HTMLButtonElement>["type"],
 }
 
 export default Button
