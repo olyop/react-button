@@ -33,8 +33,8 @@
 		letter-spacing: 1.25rem;
 		font-size: calc(var(--button-dimension) * 2 / 5); }
 	&__square {
-		width: var(--button-dimension);
-		border-radius: var(--border-radius); }
+		border-radius: 50%;
+		width: var(--button-dimension); }
 	&__transparent {
 		background-color: transparent;
 		&:hover,
