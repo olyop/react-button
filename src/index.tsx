@@ -47,7 +47,9 @@ const Button: FC<ButtonPropTypes> = ({
 	<button
 		type="button"
 		onClick={onClick}
-		title={title || (isString(text) ? text : undefined)}
+		title={title || (
+			isString(text) ? text : undefined
+		)}
 		className={bem(
 			className,
 			icon && !text ? "square" : undefined,
@@ -125,7 +127,10 @@ const Button: FC<ButtonPropTypes> = ({
 )
 
 type HTMLButtonPropTypes =
-	Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "title" | "onClick">
+	Omit<
+		ButtonHTMLAttributes<HTMLButtonElement>,
+		"className" | "title" | "onClick"
+	>
 
 interface ButtonStylePropTypes {
 	iconStyle?: CSSProperties,
