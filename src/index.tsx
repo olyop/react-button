@@ -1,18 +1,14 @@
-import {
-	FC,
-	ReactNode,
-	createElement,
-	CSSProperties,
-	ImgHTMLAttributes,
-	ButtonHTMLAttributes,
-} from "react"
+import { FC, createElement } from "react"
+import { createBEM, BEMClassType } from "@oly_op/bem"
 
-import { createBEM, BEMInput, BEMClassType } from "@oly_op/bem"
+import { PropTypes, ImageOptions } from "./types"
 
 import "./index.scss"
 
-const materialIconClassName: BEMClassType =
-	{ ignore: true, className: "material-icons" }
+const materialIconClassName: BEMClassType = {
+	ignore: true,
+	className: "material-icons",
+}
 
 const isString =
 	(value: unknown): value is string =>
@@ -21,12 +17,11 @@ const isString =
 const bem =
 	createBEM("Button")
 
-const Button: FC<ButtonPropTypes> = ({
+const Button: FC<PropTypes> = ({
 	icon,
 	text,
 	image,
 	title,
-	onClick,
 	className,
 	rightIcon,
 	iconStyle,
@@ -46,14 +41,13 @@ const Button: FC<ButtonPropTypes> = ({
 }) => (
 	<button
 		type="button"
-		onClick={onClick}
 		title={title || (
 			isString(text) ? text : undefined
 		)}
 		className={bem(
 			className,
-			icon && !text ? "square" : undefined,
-			transparent ? "transparent" : null,
+			icon && !text && "square",
+			transparent && "transparent",
 			"",
 			"FlexRowCenter Rounded",
 		)}
@@ -80,9 +74,12 @@ const Button: FC<ButtonPropTypes> = ({
 		{image && (
 			<img
 				src={image.src}
-				style={imageStyle}
 				alt={image.description}
 				crossOrigin={image.crossOrigin || "anonymous"}
+				style={{
+					...iconTextStyle,
+					...imageStyle,
+				}}
 				className={bem(
 					imageClassName,
 					iconTextClassName,
@@ -126,49 +123,9 @@ const Button: FC<ButtonPropTypes> = ({
 	</button>
 )
 
-type HTMLButtonPropTypes =
-	Omit<
-		ButtonHTMLAttributes<HTMLButtonElement>,
-		"className" | "title" | "onClick"
-	>
-
-interface ButtonStylePropTypes {
-	iconStyle?: CSSProperties,
-	textStyle?: CSSProperties,
-	imageStyle?: CSSProperties,
-	iconTextStyle?: CSSProperties,
-	leftIconStyle?: CSSProperties,
-	rightIconStyle?: CSSProperties,
-}
-
-interface ButtonClassNamePropTypes {
-	className?: BEMInput,
-	iconClassName?: BEMInput,
-	textClassName?: BEMInput,
-	imageClassName?: BEMInput,
-	iconTextClassName?: BEMInput,
-	leftIconClassName?: BEMInput,
-	rightIconClassName?: BEMInput,
-}
-
-export interface ButtonImageOptions
-	extends Pick<ImgHTMLAttributes<HTMLImageElement>, "crossOrigin"> {
-	src: string,
-	description: string,
-}
-
-export interface ButtonPropTypes
-	extends
-	HTMLButtonPropTypes,
-	ButtonStylePropTypes,
-	ButtonClassNamePropTypes {
-	icon?: string,
-	title?: string,
-	text?: ReactNode,
-	rightIcon?: string,
-	onClick?: () => void,
-	transparent?: boolean,
-	image?: ButtonImageOptions,
+export {
+	PropTypes as ButtonPropTypes,
+	ImageOptions as ButtonImageOptions,
 }
 
 export default Button
