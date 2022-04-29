@@ -10,7 +10,7 @@ import { BEMInput } from "@oly_op/bem"
 type HTMLPropTypes =
 	Omit<
 		ButtonHTMLAttributes<HTMLButtonElement>,
-		"className" | "title" | "children"
+		"className" | "children"
 	>
 
 interface StylePropTypes {
@@ -45,7 +45,6 @@ export interface PropTypes
 	StylePropTypes,
 	ClassNamePropTypes {
 	icon?: string,
-	title?: string,
 	text?: ReactNode,
 	rightIcon?: string,
 	image?: ImageOptions,

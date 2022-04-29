@@ -34,6 +34,7 @@ const options: RollupOptions = {
 	external: [
 		"react",
 		"react-dom",
+		"@oly_op/bem",
 	],
 }
 

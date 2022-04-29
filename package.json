@@ -1,7 +1,7 @@
 {
 	"types": "build",
 	"license": "MIT",
-	"version": "5.1.0",
+	"version": "5.2.0",
 	"main": "build/index.js",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
@@ -26,9 +26,10 @@
 		"delete-build": "del-cli build",
 		"init": "clear",
 		"sync": "git checkout . && git remote update && git pull",
-		"push": "git add -A && git commit -m \"Update\" && git push -u origin main"
+		"push": "git add -A && git commit -m \"Update\" && git push"
 	},
 	"devDependencies": {
+		"@oly_op/bem": "5.0.8",
 		"@oly_op/eslint-config": "5.1.40",
 		"@oly_op/eslint-config-react": "3.0.20",
 		"@oly_op/stylelint-config": "2.0.19",
@@ -62,11 +63,8 @@
 		"typescript": "4.6.4"
 	},
 	"peerDependencies": {
+		"@oly_op/bem": "5",
 		"react": "17 || 18",
 		"react-dom": "17 || 18"
-	},
-	"dependencies": {
-		"@oly_op/bem": "5.0.8",
-		"@oly_op/react-button": "5.0.1"
 	}
 }
