@@ -17,7 +17,7 @@ interface StylePropTypes {
 	iconStyle?: CSSProperties,
 	textStyle?: CSSProperties,
 	imageStyle?: CSSProperties,
-	iconTextStyle?: CSSProperties,
+	childrenStyle?: CSSProperties,
 	leftIconStyle?: CSSProperties,
 	rightIconStyle?: CSSProperties,
 }
@@ -27,7 +27,7 @@ interface ClassNamePropTypes {
 	iconClassName?: BEMInput,
 	textClassName?: BEMInput,
 	imageClassName?: BEMInput,
-	iconTextClassName?: BEMInput,
+	childrenClassName?: BEMInput,
 	leftIconClassName?: BEMInput,
 	rightIconClassName?: BEMInput,
 }

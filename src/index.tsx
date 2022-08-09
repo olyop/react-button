@@ -30,11 +30,11 @@ const Button: FC<PropTypes> = ({
 	iconClassName,
 	textClassName,
 	leftIconStyle,
-	iconTextStyle,
+	childrenStyle,
 	imageClassName,
 	rightIconStyle,
 	leftIconClassName,
-	iconTextClassName,
+	childrenClassName,
 	rightIconClassName,
 	transparent = false,
 	...props
@@ -57,14 +57,14 @@ const Button: FC<PropTypes> = ({
 			<i
 				children={icon}
 				style={{
-					...iconTextStyle,
+					...childrenStyle,
 					...iconStyle,
 					...leftIconStyle,
 				}}
 				className={bem(
 					leftIconClassName,
 					iconClassName,
-					iconTextClassName,
+					childrenClassName,
 					"icon-left",
 					"icon",
 					materialIconClassName,
@@ -77,12 +77,12 @@ const Button: FC<PropTypes> = ({
 				alt={image.description}
 				crossOrigin={image.crossOrigin || "anonymous"}
 				style={{
-					...iconTextStyle,
+					...childrenStyle,
 					...imageStyle,
 				}}
 				className={bem(
 					imageClassName,
-					iconTextClassName,
+					childrenClassName,
 					"icon",
 				)}
 			/>
@@ -91,12 +91,12 @@ const Button: FC<PropTypes> = ({
 			<span
 				children={text}
 				style={{
-					...iconTextStyle,
+					...childrenStyle,
 					...textStyle,
 				}}
 				className={bem(
 					textClassName,
-					iconTextClassName,
+					childrenClassName,
 					"UpperCase",
 					"text",
 				)}
@@ -106,14 +106,14 @@ const Button: FC<PropTypes> = ({
 			<i
 				children={rightIcon}
 				style={{
-					...iconTextStyle,
+					...childrenStyle,
 					...iconStyle,
 					...rightIconStyle,
 				}}
 				className={bem(
 					rightIconClassName,
 					iconClassName,
-					iconTextClassName,
+					childrenClassName,
 					"icon-right",
 					"icon",
 					materialIconClassName,

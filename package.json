@@ -1,8 +1,6 @@
 {
-	"types": "build",
 	"license": "MIT",
-	"version": "5.2.0",
-	"main": "build/index.js",
+	"version": "5.3.0",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
 	"bugs": "https://github.com/olyop/react-button/issues",
@@ -15,9 +13,20 @@
 		"type": "git",
 		"url": "https://github.com/olyop/react-button.git"
 	},
+	"type": "module",
+	"main": "build/index.js",
+	"module": "build/index.js",
+	"types": "build/index.d.ts",
 	"files": [
 		"build"
 	],
+	"exports": {
+		".": {
+			"types": "./build/index.d.ts",
+			"import": "./build/index.js",
+			"require": "./build/index.js"
+		}
+	},
 	"scripts": {
 		"prebuild": "npm run delete-build",
 		"build": "rollup -c rollup.config.ts --configPlugin typescript",
@@ -30,41 +39,47 @@
 	},
 	"devDependencies": {
 		"@oly_op/bem": "5.0.8",
-		"@oly_op/eslint-config": "5.1.40",
-		"@oly_op/eslint-config-react": "3.0.20",
-		"@oly_op/stylelint-config": "2.0.19",
-		"@oly_op/tsconfig": "1.0.13",
-		"@rollup/plugin-typescript": "8.3.2",
-		"@types/eslint": "8.4.1",
-		"@types/react": "18.0.8",
-		"@types/react-dom": "18.0.3",
-		"@typescript-eslint/eslint-plugin": "5.21.0",
-		"@typescript-eslint/parser": "5.21.0",
+		"@oly_op/cspell-dict": "1.0.2",
+		"@oly_op/eslint-config": "5.3.4",
+		"@oly_op/eslint-config-react": "3.1.2",
+		"@oly_op/stylelint-config": "2.1.2",
+		"@oly_op/tsconfig": "1.0.24",
+		"@rollup/plugin-typescript": "8.3.4",
+		"@types/eslint": "8.4.5",
+		"@types/react": "18.0.17",
+		"@types/react-dom": "18.0.6",
+		"@typescript-eslint/eslint-plugin": "5.33.0",
 		"acorn-jsx": "5.3.2",
-		"del-cli": "4.0.1",
-		"eslint": "8.14.0",
+		"cspell": "6.6.0",
+		"del-cli": "5.0.0",
+		"eslint": "8.21.0",
 		"eslint-config-airbnb": "19.0.4",
 		"eslint-config-airbnb-typescript": "17.0.0",
 		"eslint-plugin-import": "2.26.0",
-		"eslint-plugin-jsx-a11y": "6.5.1",
+		"eslint-plugin-jsx-a11y": "6.6.1",
 		"eslint-plugin-node": "11.1.0",
 		"eslint-plugin-promise": "6.0.0",
-		"eslint-plugin-react": "7.29.4",
-		"eslint-plugin-react-hooks": "4.5.0",
+		"eslint-plugin-react": "7.30.1",
+		"eslint-plugin-react-hooks": "4.6.0",
 		"npm-run-all": "4.1.5",
-		"postcss": "8.4.12",
-		"react": "18.1.0",
-		"react-dom": "18.1.0",
-		"rollup": "2.70.2",
-		"rollup-plugin-sass": "1.2.12",
-		"sass": "1.51.0",
-		"stylelint": "14.8.0",
+		"postcss": "8.4.16",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"rollup": "2.77.2",
+		"rollup-plugin-sass": "1.2.13",
+		"sass": "1.54.3",
+		"stylelint": "14.9.1",
 		"tslib": "2.4.0",
-		"typescript": "4.6.4"
+		"typescript": "4.7.4"
 	},
 	"peerDependencies": {
-		"@oly_op/bem": "5",
-		"react": "17 || 18",
-		"react-dom": "17 || 18"
+		"@oly_op/bem": "*",
+		"@oly_op/css-utilities": "*",
+		"react": "*",
+		"react-dom": "*"
+	},
+	"volta": {
+		"node": "18.7.0",
+		"npm": "8.16.0"
 	}
 }
