@@ -15,7 +15,7 @@ declare module "rollup" {
 const options: RollupOptions = {
 	input: "src/index.tsx",
 	output: [{
-		format: "cjs",
+		format: "esm",
 		strict: false,
 		exports: "named",
 		file: "build/index.js",
