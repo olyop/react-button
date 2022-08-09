@@ -1,6 +1,6 @@
 {
 	"license": "MIT",
-	"version": "5.3.0",
+	"version": "5.3.1",
 	"name": "@oly_op/react-button",
 	"description": "@oly_op/react-button",
 	"bugs": "https://github.com/olyop/react-button/issues",
@@ -23,8 +23,10 @@
 	"exports": {
 		".": {
 			"types": "./build/index.d.ts",
-			"import": "./build/index.js",
-			"require": "./build/index.js"
+			"import": "./build/index.js"
+		},
+		"./index.css": {
+			"import": "./build/index.css"
 		}
 	},
 	"scripts": {
