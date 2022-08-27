@@ -26,6 +26,9 @@ const options: RollupOptions = {
 	plugins: [
 		sass({
 			output: "build/index.css",
+			options: {
+				outputStyle: "compressed",
+			},
 		}),
 		typescript({
 			tsconfig: "./tsconfig.rollup.json",
