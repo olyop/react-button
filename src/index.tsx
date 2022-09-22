@@ -36,7 +36,7 @@ const Button: FC<PropTypes> = ({
 	childrenClassName,
 	rightIconClassName,
 	transparent = false,
-	isHTMLButton = false,
+	isHTMLButton = true,
 	...props
 }) => (
 	createElement<ButtonHTMLAttributes<HTMLButtonElement> | HTMLAttributes<HTMLDivElement>>(
