@@ -39,14 +39,23 @@ export interface ImageOptions
 	description: string,
 }
 
-export interface PropTypes
-	extends
-	HTMLPropTypes,
-	StylePropTypes,
-	ClassNamePropTypes {
+interface Options {
+	transparent?: boolean,
+	isHTMLButton?: boolean,
+}
+
+interface Content {
 	icon?: string,
 	text?: ReactNode,
 	rightIcon?: string,
 	image?: ImageOptions,
-	transparent?: boolean,
+}
+
+export interface PropTypes
+	extends
+	Content,
+	Options,
+	HTMLPropTypes,
+	StylePropTypes,
+	ClassNamePropTypes {
 }

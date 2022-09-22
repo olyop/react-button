@@ -1,5 +1,5 @@
-import { FC, createElement } from "react"
 import { createBEM, BEMClassType } from "@oly_op/bem"
+import { FC, createElement, Fragment, HTMLAttributes, ButtonHTMLAttributes } from "react"
 
 import { PropTypes, ImageOptions } from "./types"
 
@@ -14,8 +14,7 @@ const isString =
 	(value: unknown): value is string =>
 		typeof value === "string"
 
-const bem =
-	createBEM("Button")
+const bem = createBEM("Button")
 
 const Button: FC<PropTypes> = ({
 	icon,
@@ -37,90 +36,99 @@ const Button: FC<PropTypes> = ({
 	childrenClassName,
 	rightIconClassName,
 	transparent = false,
+	isHTMLButton = false,
 	...props
 }) => (
-	<button
-		type="button"
-		title={title || (
-			isString(text) ? text : undefined
-		)}
-		className={bem(
-			className,
-			icon && !text && "square",
-			transparent && "transparent",
-			"",
-			"FlexRowCenter Rounded",
-		)}
-		{...props}
-	>
-		{icon && (
-			<i
-				children={icon}
-				style={{
-					...childrenStyle,
-					...iconStyle,
-					...leftIconStyle,
-				}}
-				className={bem(
-					leftIconClassName,
-					iconClassName,
-					childrenClassName,
-					"icon-left",
-					"icon",
-					materialIconClassName,
+	createElement<ButtonHTMLAttributes<HTMLButtonElement> | HTMLAttributes<HTMLDivElement>>(
+		isHTMLButton ? "button" : "div",
+		{
+			type: "button",
+			title: (title || (
+				isString(text) ? text : undefined
+			)),
+			className: (
+				bem(
+					className,
+					icon && !text && "square",
+					transparent && "transparent",
+					"",
+					"FlexRowCenter Rounded",
+				)
+			),
+			...props,
+		},
+		(
+			<Fragment>
+				{icon && (
+					<i
+						children={icon}
+						style={{
+							...childrenStyle,
+							...iconStyle,
+							...leftIconStyle,
+						}}
+						className={bem(
+							leftIconClassName,
+							iconClassName,
+							childrenClassName,
+							"icon-left",
+							"icon",
+							materialIconClassName,
+						)}
+					/>
 				)}
-			/>
-		)}
-		{image && (
-			<img
-				src={image.src}
-				alt={image.description}
-				crossOrigin={image.crossOrigin || "anonymous"}
-				style={{
-					...childrenStyle,
-					...imageStyle,
-				}}
-				className={bem(
-					imageClassName,
-					childrenClassName,
-					"icon",
+				{image && (
+					<img
+						src={image.src}
+						alt={image.description}
+						crossOrigin={image.crossOrigin || "anonymous"}
+						style={{
+							...childrenStyle,
+							...imageStyle,
+						}}
+						className={bem(
+							imageClassName,
+							childrenClassName,
+							"icon",
+						)}
+					/>
 				)}
-			/>
-		)}
-		{text && (
-			<span
-				children={text}
-				style={{
-					...childrenStyle,
-					...textStyle,
-				}}
-				className={bem(
-					textClassName,
-					childrenClassName,
-					"UpperCase",
-					"text",
+				{text && (
+					<span
+						children={text}
+						style={{
+							...childrenStyle,
+							...textStyle,
+						}}
+						className={bem(
+							textClassName,
+							childrenClassName,
+							"UpperCase",
+							"text",
+						)}
+					/>
 				)}
-			/>
-		)}
-		{rightIcon && (
-			<i
-				children={rightIcon}
-				style={{
-					...childrenStyle,
-					...iconStyle,
-					...rightIconStyle,
-				}}
-				className={bem(
-					rightIconClassName,
-					iconClassName,
-					childrenClassName,
-					"icon-right",
-					"icon",
-					materialIconClassName,
+				{rightIcon && (
+					<i
+						children={rightIcon}
+						style={{
+							...childrenStyle,
+							...iconStyle,
+							...rightIconStyle,
+						}}
+						className={bem(
+							rightIconClassName,
+							iconClassName,
+							childrenClassName,
+							"icon-right",
+							"icon",
+							materialIconClassName,
+						)}
+					/>
 				)}
-			/>
-		)}
-	</button>
+			</Fragment>
+		),
+	)
 )
 
 export {
