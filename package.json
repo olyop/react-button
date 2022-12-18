@@ -41,7 +41,7 @@
 	"devDependencies": {
 		"@oly_op/bem": "5.1.0",
 		"@oly_op/cspell-dict": "1.0.115",
-		"@oly_op/css-utilities": "2.0.77",
+		"@oly_op/css-utilities": "2.0.79",
 		"@oly_op/eslint-config": "6.0.17",
 		"@oly_op/eslint-config-react": "3.1.2",
 		"@oly_op/prettier-config": "1.0.21",
