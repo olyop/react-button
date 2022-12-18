@@ -1,5 +1,6 @@
 :root {
-	--button-dimension: calc(var(--space) * 9 / 5); }
+	--button-dimension: calc(var(--space) * 9 / 5);
+}
 
 .Button {
 	cursor: pointer;
@@ -11,11 +12,14 @@
 	&:hover,
 	&:focus,
 	&:active {
-		background-color: var(--primary-color-dark); }
+		background-color: var(--primary-color-dark);
+	}
 	&:disabled {
 		cursor: not-allowed;
 		&:hover {
-			background-color: var(--primary-color); } }
+			background-color: var(--primary-color-light);
+		}
+	}
 	&__icon {
 		--fix: -2rem;
 		--dim: calc(var(--button-dimension) * 2 / 3);
@@ -23,31 +27,42 @@
 		height: var(--dim);
 		font-size: var(--dim);
 		&-left {
-			margin-left: var(--fix); }
+			margin-left: var(--fix);
+		}
 		&-right {
 			margin-right: var(--fix);
-			margin-left: calc(var(--fix) * 2); } }
+			margin-left: calc(var(--fix) * 2);
+		}
+	}
 	&__text {
 		line-height: 1;
 		margin-top: 1rem;
 		font-weight: 500;
 		letter-spacing: 1.25rem;
-		font-size: calc(var(--button-dimension) * 2 / 5); }
+		font-size: calc(var(--button-dimension) * 2 / 5);
+	}
 	&__square {
 		border-radius: 50%;
-		width: var(--button-dimension); }
+		width: var(--button-dimension);
+	}
 	&__transparent {
 		background-color: transparent;
 		&:hover,
 		&:focus,
 		&:active {
-			background-color: var(--hover-color); } }
+			background-color: var(--hover-color);
+		}
+	}
 	&__icon,
 	&__text {
 		user-select: none;
-		color: var(--primary-color-text); }
+		color: var(--primary-color-text);
+	}
 	&__square &__icon {
-		margin-left: 0; }
+		margin-left: 0;
+	}
 	&__transparent &__icon,
 	&__transparent &__text {
-		color: var(--text-color); } }
+		color: var(--text-color);
+	}
+}
