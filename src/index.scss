@@ -16,9 +16,7 @@
 	}
 	&:disabled {
 		cursor: not-allowed;
-		&:hover {
-			background-color: var(--primary-color-light);
-		}
+		background-color: var(--primary-color-light);
 	}
 	&__icon {
 		--fix: -2rem;
