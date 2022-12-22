@@ -39,9 +39,10 @@ const Button: FC<PropTypes> = ({
 	createElement<ButtonHTMLAttributes<HTMLButtonElement> | HTMLAttributes<HTMLDivElement>>(
 		isHTMLButton ? "button" : "div",
 		{
-			type: "button",
-			title: title || (isString(text) ? text : undefined),
-			className: bem(
+			"type": isHTMLButton ? "button" : undefined,
+			"title": title || (isString(text) ? text : undefined),
+			"aria-label": title || (isString(text) ? text : undefined),
+			"className": bem(
 				className,
 				icon && !text && "square",
 				transparent && "transparent",
@@ -54,11 +55,6 @@ const Button: FC<PropTypes> = ({
 			{icon && (
 				<i
 					children={icon}
-					style={{
-						...childrenStyle,
-						...iconStyle,
-						...leftIconStyle,
-					}}
 					className={bem(
 						leftIconClassName,
 						iconClassName,
@@ -67,6 +63,11 @@ const Button: FC<PropTypes> = ({
 						"icon",
 						materialIconClassName,
 					)}
+					style={{
+						...childrenStyle,
+						...iconStyle,
+						...leftIconStyle,
+					}}
 				/>
 			)}
 			{image && (
@@ -74,11 +75,11 @@ const Button: FC<PropTypes> = ({
 					src={image.src}
 					alt={image.description}
 					crossOrigin={image.crossOrigin || "anonymous"}
+					className={bem(imageClassName, childrenClassName, "icon")}
 					style={{
 						...childrenStyle,
 						...imageStyle,
 					}}
-					className={bem(imageClassName, childrenClassName, "icon")}
 				/>
 			)}
 			{text && (
@@ -94,11 +95,6 @@ const Button: FC<PropTypes> = ({
 			{rightIcon && (
 				<i
 					children={rightIcon}
-					style={{
-						...childrenStyle,
-						...iconStyle,
-						...rightIconStyle,
-					}}
 					className={bem(
 						rightIconClassName,
 						iconClassName,
@@ -107,6 +103,11 @@ const Button: FC<PropTypes> = ({
 						"icon",
 						materialIconClassName,
 					)}
+					style={{
+						...childrenStyle,
+						...iconStyle,
+						...rightIconStyle,
+					}}
 				/>
 			)}
 		</Fragment>,
